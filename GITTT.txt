@@ -1,0 +1,28 @@
+minikube start 
+-> kubectl get all
+-> kubectl get namespaces
+-> kubectl get nodes
+-> minikube ip
+
+ 
+
+2. kubectl create namespace s2namespce(namespace name here)
+
+ 
+
+3. kubectl run my-apache-pod(yourpodname) --image=nginx:latest --namespace=s1namespce(namespace created earlier).
+-> kubectl get pods --all-namespaces
+-> kubectl get pods -n s2namespce(specific name space)
+
+ 
+
+4. docker tag mongo prashanthdurgam2206/mongo
+-> docker push prashanthdurgam2206/mongo
+-> kubectl run mongo-pod(podname) --image=prashanthdurgam2206(dockerusername)/mongo:latest --namespace=s1namespce
+-> kubectl get pods --namespace=s1namespace
+
+ 
+
+
+5. kubectl create deployment ppp-deployment(deploymentname) --image=prashanthdurgam2206(dockerusername)/mongo --replicas=3 --namespace=s1namespce(namespacename)
+-> kubectl get deployment prashanth-deployment --namespace=s1namespce
